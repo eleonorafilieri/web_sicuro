@@ -1,5 +1,6 @@
 <?php
 	require 'common/elements/header.php';
+	//ciao
 ?>
 	<div class="row">
 		<div class="col-sm-12">
