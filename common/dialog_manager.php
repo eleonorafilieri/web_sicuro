@@ -3,11 +3,11 @@
 	require('../libs/functions.php');
 	
 	session_start();
-	$loggedin = isset($_SESSION['loggedin']) ? $_SESSION['loggedin'] : false;
+	$logged = isset($_SESSION['logged']) ? $_SESSION['logged'] : false;
 	$user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : 0;
 	$action = isset($_GET['action']) ? $_GET['action'] : '';
 	
-	if($action == '' || (!$loggedin && $action != 'login') || ($loggedin && $action == 'login')) {
+	if($action == '' || (!$logged && $action != 'login') || ($logged && $action == 'login')) {
 		header('Location: ../index.php');
 	}
 	elseif($action=='login') {
@@ -15,7 +15,7 @@
 		$pwd = isset($_POST['pwd']) ? $_POST['pwd'] : "";
 		$id = checkLogin($username, $pwd);
 		if($id!=NULL && $id !=0) {
-			$_SESSION['loggedin'] = true;
+			$_SESSION['logged'] = true;
 			$_SESSION['user_id'] = $id;
 			header('Location: ../index.php');
 		} else {

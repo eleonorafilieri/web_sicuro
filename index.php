@@ -5,7 +5,7 @@
 	<div class="row">
 		<div class="col-sm-12">
 <?php
-	if (!$loggedin) {
+	if (!$logged) {
 ?>
 		<h2>Login</h2>
 		<form id="loginForm" method="post" action="common/dialog_manager.php?action=login">

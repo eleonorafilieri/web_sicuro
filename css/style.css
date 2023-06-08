@@ -1,7 +1,31 @@
 header {
-	background-color: orange;
-	color: #333;
-}
+    background: linear-gradient(to bottom, #ccffcc, #ffffff);
+  }
+  nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+	font-family: 'Montserrat', sans-serif;
+
+  }
+  
+  nav ul li {
+    margin-left: 20px;
+  }
+  
+  nav ul li:first-child {
+    margin-left: 0;
+  }
+  
+  nav ul li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+  }
+  
 footer {
 	background-color: black;
 	color: white;
@@ -29,3 +53,15 @@ button[data-toggle="collapse"] span {
 	color: #fff;
 	border-radius:20px;
 }
+
+@media (max-width: 768px) {
+    nav ul {
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+    
+    nav ul li {
+      margin-left: 0;
+      margin-bottom: 10px;
+    }
+  }

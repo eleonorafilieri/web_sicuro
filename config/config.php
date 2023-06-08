@@ -4,9 +4,9 @@
 	define("MSG_ERROR_ORDER", "order_error");
 	
 	$dbhost = "localhost";
-	$dbuser = "utente";
-	$dbpwd = "password";
-	$dbname = "progetto_esempio";
+	$dbuser = "root";
+	$dbpwd = "";
+	$dbname = "websicuro";
 	
 	$errori = array(
 		'login_error' => '<div class="alert alert-danger"><p>Username o password errati</p></div>',
