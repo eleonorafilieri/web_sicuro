@@ -1,0 +1,31 @@
+header {
+	background-color: orange;
+	color: #333;
+}
+footer {
+	background-color: black;
+	color: white;
+}
+header, footer, main{
+	padding: 30px 0px;
+}
+header a, footer a {
+	color: white;
+}
+img {
+	max-width: 100%;	
+}
+button[data-toggle="collapse"] {
+	border: none;
+	background-color: transparent;
+}
+button[data-toggle="collapse"] span {
+	float: right;
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+	margin-left: 3px;
+	background-color: #ccc;
+	color: #fff;
+	border-radius:20px;
+}
