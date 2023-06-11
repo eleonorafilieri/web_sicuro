@@ -1,11 +1,14 @@
 <?php
 session_start();
-include 'functions/db.php';
-include 'functions/functions.php';
-$families = getPlantFamilies();
+$servername="localhost";
+$username="root";
+$password="";
+$database="negozio_piante";
+include 'functions/functions_home.php';
+$families = getPlantFamilies($servername,$username, $password, $database);
 
 $selectedFamilyId = isset($_GET['famiglia']) ? $_GET['famiglia'] : null;
-$plants = ($selectedFamilyId !== null) ? getPlantsByFamily($selectedFamilyId) : getAllPlants();
+$plants = ($selectedFamilyId !== null) ? getPlantsByFamily($selectedFamilyId,$servername,$username, $password, $database) : getAllPlants($servername,$username, $password, $database);
 if (isset($_GET['logout'])) {
     session_unset();
     session_destroy();

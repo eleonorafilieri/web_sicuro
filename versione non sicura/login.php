@@ -1,7 +1,7 @@
 <?php
 session_start();
 include 'functions/db.php';
-include 'functions/functions.php';
+include 'functions/functions_login.php';
 
 // Gestione del login
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
