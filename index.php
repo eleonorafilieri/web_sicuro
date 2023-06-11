@@ -20,13 +20,16 @@ $user = isset($_SESSION['user']) ? $_SESSION['user'] : null;?>
     <title>Bloom</title>
     <link rel="stylesheet" type="text/css" href="./css/style.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
      
     <nav class="navbar navbar-expand-lg navbar-dark ">
         <a class="navbar-brand" href="#">
-            <img src="elements/logo.png" alt="Logo" class="logo d-inline-block align-top">
+            <img src="img/logo.png" alt="Logo" class="logo d-inline-block align-top">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
