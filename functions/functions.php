@@ -55,7 +55,6 @@ function getPlantFamilies()
 
     return $families;
 }
-
 function getAllPlants()
 {
     $connection = getConnection();
@@ -69,6 +68,35 @@ function getAllPlants()
 
     return $plants;
 }
+/*
+function getAllPlants()
+{
+    $connection = getConnection();
+    $query = "SELECT * FROM piante";
+    $result = $connection->query($query);
+    $plants = array();
+
+    while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+        $plants[] = $row;
+    }
+
+    return $plants;
+}*/
+function getPlantsByFamily($familyId)
+{
+    $connection = getConnection();
+    $familyId = $connection->quote($familyId); // Quote il valore per evitare problemi di escaping manuale
+    $query = "SELECT * FROM piante WHERE id_famiglia = $familyId";
+    $result = $connection->query($query);
+    $plants = array();
+
+    while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+        $plants[] = $row;
+    }
+
+    return $plants;
+}
+/*
 function getPlantsByFamily($familyId)
 {
     $connection = getConnection();
@@ -81,4 +109,4 @@ function getPlantsByFamily($familyId)
     }
 
     return $plants;
-}
+}*/
