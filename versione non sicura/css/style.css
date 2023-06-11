@@ -1,0 +1,83 @@
+/* Stili CSS per il sito web */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar{
+    width: 100%;
+    background-color: #C0E8BD!important;
+
+
+}
+.logo {
+    min-width: 146px;
+    max-width: 146px;
+
+}
+.list-group{
+    justify-content: center!important;
+    margin: 1em 0!important;
+}
+.list-group-item{
+    border: none!important;
+
+}
+.list-group-item a{
+    font-family: 'Montserrat', sans-serif;
+    color: #1f1f1f;
+    text-decoration: none;
+}
+.list-group-item.selected {
+    background-color: #C0E8BD;
+    text-decoration: underline;
+    font-weight: 900;
+    border: none!important;
+
+}
+.navbar-expand-lg .navbar-nav .nav-item{
+    padding-right: 6.5rem!important;
+}
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 10px;
+    
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #1f1f1f!important;
+    padding: 0 2rem!important;
+    font-family: 'Montserrat', sans-serif;
+
+
+}
+h1{
+    margin: 1em 0!important;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+
+}
+.card{
+    margin-bottom: 1em;
+}
+.card-img-top{
+    max-height: 311px;
+}
+footer {
+    background-color: #f0f0f0;
+    padding: 10px;
+    text-align: center;
+}
