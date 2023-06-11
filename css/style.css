@@ -1,67 +1,60 @@
-header {
-    background: linear-gradient(to bottom, #ccffcc, #ffffff);
-  }
-  nav ul {
+/* Stili CSS per il sito web */
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    list-style: none;
+}
+
+header {
     display: flex;
-    justify-content: flex-end;
-	font-family: 'Montserrat', sans-serif;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar{
+    width: 100%;
+    background-color: #C0E8BD!important;
 
-  }
-  
-  nav ul li {
-    margin-left: 20px;
-  }
-  
-  nav ul li:first-child {
-    margin-left: 0;
-  }
-  
-  nav ul li a {
-    display: block;
-    padding: 10px;
-    text-decoration: none;
-    color: #333;
-  }
-  
-footer {
-	background-color: black;
-	color: white;
+
 }
-header, footer, main{
-	padding: 30px 0px;
+.logo {
+    min-width: 146px;
+    max-width: 146px;
+
 }
-header a, footer a {
-	color: white;
+.list-group-item{
+    border: none;
+
 }
-img {
-	max-width: 100%;	
+.list-group-item.selected {
+    background-color: #C0E8BD;
 }
-button[data-toggle="collapse"] {
-	border: none;
-	background-color: transparent;
+.navbar-expand-lg .navbar-nav .nav-item{
+    padding-right: 6.5rem!important;
 }
-button[data-toggle="collapse"] span {
-	float: right;
-	width: 20px;
-	height: 20px;
-	line-height: 20px;
-	margin-left: 3px;
-	background-color: #ccc;
-	color: #fff;
-	border-radius:20px;
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
-@media (max-width: 768px) {
-    nav ul {
-      flex-direction: column;
-      justify-content: flex-start;
-    }
+nav ul li {
+    display: inline-block;
+    margin-right: 10px;
     
-    nav ul li {
-      margin-left: 0;
-      margin-bottom: 10px;
-    }
-  }
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #1f1f1f!important;
+    padding: 0 2rem!important;
+
+}
+h1{
+    margin: 1em 0!important;
+    text-align: center;
+}
+footer {
+    background-color: #f0f0f0;
+    padding: 10px;
+    text-align: center;
+}
