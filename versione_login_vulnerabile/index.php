@@ -19,6 +19,7 @@ if (isset($_GET['logout'])) {
 }
 
 $user = isset($_SESSION['user']) ? $_SESSION['user'] : null;
+$isAdmin = isset($_SESSION['admin']);
 ?>
 
 <!DOCTYPE html>
@@ -93,13 +94,13 @@ $user = isset($_SESSION['user']) ? $_SESSION['user'] : null;
                 echo '            <p class="card-text">' . $plant['descrizione'] . '</p>';
                 echo '        </div>';
                 echo '    </div>';
-                
-                if ($user && $_SESSION['admin'] == 1) { ?>
-                    <form method="POST">
-                        <input type="hidden" name="deletePlantId" value="<?php echo $plant['id_pianta']; ?>">
-                        <button type="submit" class="btn btn-danger" name="deletePlant">Elimina</button>
-                    </form>
-                <?php }
+            
+                if ($user && $isAdmin) { 
+                    echo '<form method="POST">';
+                    echo '    <input type="hidden" name="deletePlantId" value="' . $plant['id_pianta'] . '">';
+                    echo '    <button type="submit" class="btn btn-danger" name="deletePlant">Elimina</button>';
+                    echo '</form>';
+                }
                 echo '</div>';
             }
             ?>

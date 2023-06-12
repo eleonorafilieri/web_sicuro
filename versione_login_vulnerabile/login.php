@@ -13,11 +13,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Versione senza protezione da SQL injection
         //$user = loginUser($username, $password);
         // Versione con protezione da SQL injection
-        $user = loginUserSecure($username, $password);
+        $user = loginUser($username, $password);
 
         if ($user) {
             $_SESSION['user'] = $user;
-            $_SESSION['admin'] = $user['admin']; // Aggiungi questa riga per salvare lo stato di amministratore nella sessione
+            if ($user['admin'] == 1) {
+                $_SESSION['admin'] = $user['admin'];
+            }
             header('Location: index.php');
             exit();
         }

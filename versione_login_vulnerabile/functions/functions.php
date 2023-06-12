@@ -1,5 +1,5 @@
 <?php
-function loginUserSecure($username, $password)
+function loginUser($username, $password)
 {
     $connection = getConnection();
 
@@ -16,14 +16,16 @@ function loginUserSecure($username, $password)
         return false;
     }
 }
-
-function deletePlant($plantId)
+function deletePlant($plantId, $isAdmin = false)
 {
     $connection = getConnection();
     $query = "DELETE FROM piante WHERE id_pianta = :plantId";
     $statement = $connection->prepare($query);
     $statement->execute(['plantId' => $plantId]);
+
+
 }
+
 
 
 function getPlantFamilies()

@@ -3,7 +3,7 @@ function loginUserSecure($username, $password)
 {
     $connection = getConnection();
     $username = htmlspecialchars($username);
-
+    $password = htmlspecialchars($password);
     $query = "SELECT * FROM users WHERE username = :username AND password = :password";
     $statement = $connection->prepare($query);
     $statement->bindParam(':username', $username);
