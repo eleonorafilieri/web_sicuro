@@ -1,5 +1,6 @@
 <?php
-
+$admin= $_POST["utente"];
+$password= $_POST["password"];
 
 function loginUserSecure($username, $password)
 {
