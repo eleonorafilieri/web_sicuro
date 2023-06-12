@@ -76,6 +76,20 @@ h1{
 .card-img-top{
     max-height: 311px;
 }
+.card-body{
+    min-height: 300px;
+}
+.btn-primary{
+    margin: 2em 0!important;
+    background-color: #C0E8BD!important; 
+    border: 1px solid #537355!important;
+    color: #1f1f1f!important;
+
+}
+.btn-danger{
+    width: -webkit-fill-available!important;
+    margin-bottom: 2em;
+}
 footer {
     background-color: #f0f0f0;
     padding: 10px;

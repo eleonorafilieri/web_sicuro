@@ -1,7 +1,7 @@
 <?php
 session_start();
 include 'functions/db.php';
-include 'functions/functions_login.php';
+include 'functions/functions.php';
 
 // Gestione del login
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -17,9 +17,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if ($user) {
             $_SESSION['user'] = $user;
+            $_SESSION['admin'] = $user['admin']; // Aggiungi questa riga per salvare lo stato di amministratore nella sessione
             header('Location: index.php');
             exit();
-        } else {
+        }
+         else {
             $loginError = 'Credenziali non valide. Riprova.';
         }
     } else {
@@ -30,8 +32,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Login - Negozio di Piante</title>
-    <link rel="stylesheet" type="text/css" href="./css/style.css">
+<title>Bloom - Login - Versione non vulnerabile</title>
+<link rel="stylesheet" type="text/css" href="./css/style.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

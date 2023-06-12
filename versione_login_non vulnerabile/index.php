@@ -2,6 +2,11 @@
 session_start();
 include 'functions/db.php';
 include 'functions/functions.php';
+if (isset($_POST['deletePlant'])) {
+    $plantId = $_POST['deletePlantId'];
+    deletePlant($plantId);
+}
+
 $families = getPlantFamilies();
 
 $selectedFamilyId = isset($_GET['famiglia']) ? $_GET['famiglia'] : null;
@@ -13,11 +18,13 @@ if (isset($_GET['logout'])) {
     exit();
 }
 
-$user = isset($_SESSION['user']) ? $_SESSION['user'] : null;?>
+$user = isset($_SESSION['user']) ? $_SESSION['user'] : null;
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Bloom</title>
+<title>Bloom- Versione non vulnerabile</title>
     <link rel="stylesheet" type="text/css" href="./css/style.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -86,6 +93,13 @@ $user = isset($_SESSION['user']) ? $_SESSION['user'] : null;?>
                 echo '            <p class="card-text">' . $plant['descrizione'] . '</p>';
                 echo '        </div>';
                 echo '    </div>';
+                
+                if ($user && $_SESSION['admin'] == 1) { ?>
+                    <form method="POST">
+                        <input type="hidden" name="deletePlantId" value="<?php echo $plant['id_pianta']; ?>">
+                        <button type="submit" class="btn btn-danger" name="deletePlant">Elimina</button>
+                    </form>
+                <?php }
                 echo '</div>';
             }
             ?>
