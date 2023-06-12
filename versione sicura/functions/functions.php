@@ -1,24 +1,4 @@
 <?php
-
-function loginUser($username, $password)
-{
-    $connection = getConnection();
-    $username = htmlspecialchars($username); // Protezione da attacchi XSS
-
-    // Versione senza protezione da SQL injection (NON consigliata)
-    //$query = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
-
-    // Versione con protezione da SQL injection (consigliata)
-    $query = "SELECT * FROM users WHERE username = :username AND password = :password";
-    $statement = $connection->prepare($query);
-    $statement->execute([
-        'username' => $username,
-        'password' => $password
-    ]);
-
-    return $statement->fetch(PDO::FETCH_ASSOC);
-}
-
 function loginUserSecure($username, $password)
 {
     $connection = getConnection();
@@ -39,8 +19,6 @@ function loginUserSecure($username, $password)
         return false;
     }
 }
-
-
 
 function getPlantFamilies()
 {

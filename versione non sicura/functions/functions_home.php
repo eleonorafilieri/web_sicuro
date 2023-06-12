@@ -7,7 +7,7 @@ function getPlantFamilies($servername,$username, $password, $database)
     if (!$connection) {
         die("Errore nella connessione al database: " . mysqli_connect_error());
     }
-
+    
     $query = "SELECT * FROM famiglia";
     $result = mysqli_query($connection, $query);
 
